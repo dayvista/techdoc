@@ -1,5 +1,24 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Fauna One', serif;
+  font-size: 1.2em;
+}
+
+p {
+  text-indent: 40px;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+main header {
+  font-weight: bold;
+  font-size: 1.3em;
+  text-decoration: underline;
 }
 
 #navbar { /* responsive & sticky side-nav bar synthesized from these tutorials: https://www.youtube.com/watch?v=PwWHL3RyQgk - https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp - https://www.youtube.com/watch?v=N6bqSR1oLlc */
@@ -13,30 +32,12 @@ body {
   transition: .5s;
   background-color: #000000;
   color: #ffffff;
+  text-align: left;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px)
-{
-  #navbar {
-    height: 100%;
-    width: 35vw;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px)
-{
-  #navbar {
-    height: 100%;
-    width: 22vw;
-  }
-}
-
-@media screen and (min-width: 1025px)
-{
-  #navbar {
-    height: 100%;
-    width: 17vw;
-  }
+#navbar header {
+  font-size: 1em;
+  padding-bottom: 25px;
 }
 
 #navbar header {
@@ -46,8 +47,139 @@ body {
 #navbar a {
   text-decoration: none;
   color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-width: 2 px;
+  border-bottom-width: 2 px;
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
 }
 
-main li {
+#nav-top {
+  border-width: 0px;
+}
+
+#navbar a:hover {
+  color: #DCDCDC; 
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px)
+{
+  #navbar {
+    height: 300px;
+    width: 100%;
+    top: -350px;
+    transition: .7s;
+  }
+
+  #navbar a {
+    padding: 10px 5px;
+  }
+
+  #menuToggle {
+    display: none;
+  }
+
+  #menuToggle:checked ~ #navbar {
+    position: absolute;
+    top: 0px;
+  }
+
+  #burger-1 {
+    display: inline-block;
+    padding: 1.3vw 2.6vw;
+    cursor: pointer;
+    color: #ffffff;
+    float: right;
+    background-color: #000000;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  #burger-2 {
+    display: inline-block;
+    padding: 1.3vw 2.6vw;
+    margin-right: 10px;
+    margin-top: -10px;
+    cursor: pointer;
+    color: #000000;
+    float: right;
+    background-color: #ffffff;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px)
+{
+  body {
+    padding-left: 22.1vw;
+  }
+
+  #navbar {
+    height: 100%;
+    width: 22vw;
+  }
+
+  #menuToggle, #burger-1, #burger-2 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1025px)
+{
+  body {
+    padding-left: 17.1vw;
+  }
+
+  #navbar {
+    height: 100%;
+    width: 17vw;
+  }
+
+  #menuToggle, #burger-1, #burger-2 {
+    display: none;
+  }
+}
+
+li {
   list-style-type: none;
+}
+
+#Closing {
+  padding-bottom: 25px;
+}
+
+#Closing ul {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  padding-bottom: 20px;
+}
+
+footer {
+  font-size: .8em;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-color: #000000;
+  text-align: center;
+}
+
+#logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 8%;
 }

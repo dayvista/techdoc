@@ -8,57 +8,167 @@
     <title>CSS3 Documentation</title>
   </head>
   <body>
+    <input type="checkbox" id="menuToggle" autocomplete="off">
+    <label for="menuToggle" class="menu-icon" id="burger-1">&#9776;</label>
     <nav id="navbar">
-      <header>CSS3 Documentation</header>
-        <a href="#Introduction" class="nav-link">Introduction</a>
-        <a href="#The_Basics" class="nav-link">The Basics</a>
+      <header>CSS3_Doc <label for="menuToggle" class="menu-icon" id="burger-2">&#9776;</label> </header>
+        <a href="#The_Basics" class="nav-link" id="nav-top">The Basics</a>
         <a href="#Syntax" class="nav-link">Syntax</a>
         <a href="#Layout" class="nav-link">Layout</a>
-        <a href="#Grid_and_Flexbox" class="nav-link">Grid and Flexbox</a>
-        <a href="#Closing" class="nav-link">Closing</a>
+        <a href="#History" class="nav-link">History</a>
+        <a href="#Closing" class="nav-link" id="nav-bottom">Closing</a>
     </nav>
     <main id="main-doc">
-      <section id="Introduction" class="main-section">
-        <header>Introduction</header>
-          <p></p>
-          <code></code>
-          <p></p>
-          <ul>
-            <li></li>
-          </ul>
-      </section>
       <section id="The_Basics" class="main-section">
         <header>The Basics</header>
-          <p></p>
-          <code></code>
-          <p></p>
+          <p>
+            Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
+            <br>
+          </p>
+          <p>
+            CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts. This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file, and reduce complexity and repetition in the structural content.
+            <br>
+          </p>
+          <p>
+            Separation of formatting and content also makes it feasible to present the same markup page in different styles for different rendering methods, such as on-screen, in print, by voice (via speech-based browser or screen reader), and on Braille-based tactile devices. CSS also has rules for alternate formatting if the content is accessed on a mobile device.
+            <br>
+            <br>
+            ---
+            <br>
+            <br>
+            One example of alternate mobile formatting relies on the use of media queries. Here is an example of a media query used to adjust the styling of the website for display on the screen of a typical cell-phone:
+          </p>
+          <code>@media screen and (max-width: 767px)
+            {
+              body {
+                overflow-x: hidden;
+              }
+          
+              .content {
+                left: 50%;
+              }
+          
+              #header {
+                position: absolute;
+                width: 100px;
+                left: -100px;
+              }
+          
+              li, a {
+                font-size: 1em;
+                font-weight: bold;
+              }
+          
+              #menuToggle {
+                display: none;
+              }
+          
+              #menuToggle:checked ~ #header {
+                position: absolute;
+                left: 0;
+              }
+          
+              #burger {
+                display: inline-block;
+                padding: 1.3vw 2.6vw;
+                cursor: pointer;
+                color: #8380ec;
+                float: right;
+                background-color: #ecd380;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                border-radius: 2px;
+              }
+            }
+            <br>
+            <br>
+            ---
+          </code>
+          <p>
+            The name <i>cascading</i> comes from the specified priority scheme to determine which style rule applies if more than one rule matches a particular element. This cascading priority scheme is predictable.
+          </p>
+          <p>
+            The CSS specifications are maintained by the World Wide Web Consortium (W3C). Internet media type (MIME type) text/css is registered for use with CSS by RFC 2318 (March 1998). The W3C operates a free CSS validation service for CSS documents.
+          </p>
+          <p>
+            In addition to HTML, other markup languages support the use of CSS including XHTML, plain XML, SVG, and XUL.
+          </p>
           <ul>
             <li></li>
           </ul>
       </section>
       <section id="Syntax" class="main-section">
         <header>Syntax</header>
-          <p></p>
-          <code></code>
-          <p></p>
+          <p>
+            CSS has a simple syntax and uses a number of English keywords to specify the names of various style properties. A style sheet consists of a list of rules. Each rule or rule-set consists of one or more selectors, and a declaration block.
+            <br>
+            One example of a selector is:
+            <br>
+            ---
+          </p>
+          <code>#elementid:hover<br>---<br></code>
+          <p>The attributes of CSS3 syntax are as follows:</p>
           <ul>
-            <li></li>
+            <li>- Selector</li>
+            <li>- Declaration Block</li>
+            <li>- Use</li>
+            <li>- Sources</li>
+            <li>- Specificity</li>
+            <li>- Inheritance</li>
+            <li>- Whitespace</li>
+            <li>- Positioning</li>
           </ul>
       </section>
       <section id="Layout" class="main-section">
         <header>Layout</header>
-          <p></p>
-          <code></code>
-          <p></p>
+          <p>
+            CSS Grid Layout excels at dividing a page into major regions or defining the relationship in terms of size, position, and layer, between parts of a control built from HTML primitives.
+          </p>
+          <p>
+            Like tables, grid layout enables an author to align elements into columns and rows. However, many more layouts are either possible or easier with CSS grid than they were with tables. For example, a grid container's child elements could position themselves so they actually overlap and layer, similar to CSS positioned elements.
+            <br>
+            ---
+          </p>
+          <code>.wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+          }<br><br>---</code>
+          <p>
+            CSS Flexible Box Layout is a module of CSS that defines a CSS box model optimized for user interface design, and the layout of items in one dimension. In the flex layout model, the children of a flex container can be laid out in any direction, and can “flex” their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated.
+            <br>
+            <br>
+            Flex properties include:
+            <br>
+          </p>
           <ul>
-            <li></li>
+            <li>flex</li>
+            <li>flex-basis</li>
+            <li>flex-direction</li>
+            <li>flex-flow</li>
+            <li>flex-grow</li>
+            <li>flex-shrink</li>
+            <li>flex-wrap</li>
+            <li>order</li>
           </ul>
       </section>
-      <section id="Grid_and_Flexbox" class="main-section">
-        <header>Grid and Flexbox</header>
-          <p></p>
+      <section id="History" class="main-section">
+        <header>History</header>
+          <p>
+            CSS was first proposed by Håkon Wium Lie on October 10, 1994. At the time, Lie was working with Tim Berners-Lee at CERN. Several other style sheet languages for the web were proposed around the same time, and discussions on public mailing lists and inside World Wide Web Consortium resulted in the first W3C CSS Recommendation (CSS1) being released in 1996. In particular, a proposal by Bert Bos was influential; he became co-author of CSS1, and is regarded as co-creator of CSS.
+          </p>
+          <p>
+            Style sheets have existed in one form or another since the beginnings of Standard Generalized Markup Language (SGML) in the 1980s, and CSS was developed to provide style sheets for the web. One requirement for a web style sheet language was for style sheets to come from different sources on the web. Therefore, existing style sheet languages like DSSSL and FOSI were not suitable. CSS, on the other hand, let a document's style be influenced by multiple style sheets by way of "cascading" styles.
+          </p>
+          <p>
+            The CSS Working Group began tackling issues that had not been addressed with CSS level 1, resulting in the creation of CSS level 2 on November 4, 1997. It was published as a W3C Recommendation on May 12, 1998. CSS level 3, which was started in 1998, is still under development as of 2014.
+          </p>
           <code></code>
-          <p></p>
           <ul>
             <li></li>
           </ul>
@@ -66,13 +176,30 @@
       <section id="Closing" class="main-section">
         <header>Closing</header>
           <p></p>
-          <code></code>
-          <p></p>
+          <p>Further reading:</p>
           <ul>
-            <li></li>
+            <li>Jeffrey Zeldman (2009): Designing With Web Standards, New Riders, ISBN 978-0321616951 (paperback)</li>
+            <br>
+            <li>Dan Cederholm (2009): Web Standards Solutions, The Markup and Style Handbook, Friends of Ed, ISBN 978-1430219200 (paperback)</li>
+            <br>
+            <li>Meyer, Eric A. (2006). Cascading Style Sheets: The Definitive Guide, Third Edition. O'Reilly Media, Inc. ISBN 0-596-52733-0.</li>
+            <br>
+            <li>Meyer, Eric A. (2001) Cascading Style Sheets 2.0 Programmer's Reference, McGraw-Hill Osborne Media, ISBN 0-07-213178-0</li>
+            <br>
+            <li>The Zen of CSS Design (2005) (co-authored by CSS Zen Garden Owner, Dave Shea, and Molly E. Holzschlag), ISBN 0-321-30347-4</li>
           </ul>
+          <code>* {goodbye: world;}</code>
       </section>
+      <footer>
+        <p>
+          'Documentation' notes copied from the CSS page on <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">en.wikipedia.org</a> and the CSS3 documentation page on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">developer.mozilla.org</a>.
+        </p>
+        <br>
+          <p>
+            Dayvista Web Development | liam@dayvista.work 
+          </p>
+          <a href="https://dayvista.work" target="_blank"><img src="https://dayvista.work/img/logo/logoblack.png" alt="Dayvista Web Dev Logo" id="logo"></a>
+      </footer>
     </main>
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
 </html>
