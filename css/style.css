@@ -85,8 +85,9 @@ main header {
   }
 
   #menuToggle:checked ~ #navbar {
-    position: absolute;
-    top: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 
   #burger-1 {
